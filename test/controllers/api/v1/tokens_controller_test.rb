@@ -6,6 +6,7 @@ class Api::V1::TokensControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get JWT token' do
+    # password matches from fixtur users.yml one
     post api_v1_tokens_url, params:{ user: { email: @user.email, password: 'g00d_pa$$'}}, as: :json
     assert_response :success
 
